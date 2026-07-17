@@ -6,7 +6,7 @@ $conn = mysqli_init();
 $conn->ssl_set(
     null,
     null,
-    "ca.pem",
+    __DIR__ . "/ca.pem",
     null,
     null
 );
