@@ -1,8 +1,6 @@
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-require_once "config.php";
-
 $conn = mysqli_init();
 
 $conn->ssl_set(
@@ -14,11 +12,11 @@ $conn->ssl_set(
 );
 
 $conn->real_connect(
-    DB_HOST,
-    DB_USER,
-    DB_PASS,
-    DB_NAME,
-    DB_PORT,
+    getenv("DB_HOST"),
+    getenv("DB_USER"),
+    getenv("DB_PASS"),
+    getenv("DB_NAME"),
+    getenv("DB_PORT"),
     null,
     MYSQLI_CLIENT_SSL
 );
