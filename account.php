@@ -599,12 +599,12 @@ src="<?= !empty($user['profile_image'])
           <div>
             <div class="formrow">
               <label>ชื่อผู้ใช้งาน</label>
-              <input type="text" name="name" value="<?= htmlspecialchars($user['name']) ?>" required>
+              <input type="text" name="name" value="<?= htmlspecialchars($user['name']??'') ?>" required>
             </div>
 
             <div class="formrow">
               <label>อีเมล</label>
-              <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
+              <input type="email" name="email" value="<?= htmlspecialchars($user['email']??'') ?>" required>
             </div>
 
             <div class="formrow">
