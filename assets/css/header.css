@@ -1,0 +1,190 @@
+*{box-sizing:border-box;}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#fff;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.topbar__inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.left-group{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  height:54px;
+}
+
+.desktop-search{
+  flex:1;
+  max-width:520px;
+}
+
+.desktop-search input,
+.mobile-search input{
+  width:100%;
+  height:46px;
+  border-radius:999px;
+  border:1px solid #ddd;
+  padding:0 18px;
+  font-size:14px;
+  outline:none;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.iconbtn{
+  text-decoration:none;
+  font-size:22px;
+  padding:8px;
+}
+
+.cart-circle{
+  position:relative;
+}
+
+.cart-badge{
+  position:absolute;
+  top:-8px;
+  right:-12px;
+  background:red;
+  color:#fff;
+  border-radius:999px;
+  padding:2px 7px;
+  font-size:12px;
+}
+
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.profile-menu{position:relative;}
+
+.dropdown{
+  display:none;
+  position:absolute;
+  top:48px;
+  right:0;
+  width:180px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  padding:8px;
+}
+
+.dropdown.show{
+  display:block;
+}
+
+.dropdown-item{
+  display:block;
+  padding:10px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#111;
+}
+
+.dropdown-item:hover{
+  background:#f5f5f5;
+}
+
+.menu-btn{
+  display:none;
+  border:none;
+  background:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:270px;
+  height:100%;
+  background:#fff;
+  padding:20px;
+  box-shadow:6px 0 25px rgba(0,0,0,.15);
+  transition:.3s;
+  z-index:1001;
+}
+
+.mobile-menu.show{
+  left:0;
+}
+
+.mobile-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  display:none;
+  z-index:1000;
+}
+
+.mobile-overlay.show{
+  display:block;
+}
+
+.menu-item{
+  display:block;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#111;
+}
+
+.menu-item:hover{
+  background:#f5f5f5;
+}
+
+.menu-title{
+  font-size:13px;
+  color:#888;
+  margin:14px 0 8px;
+}
+
+.mobile-search{
+  display:none;
+}
+
+@media(max-width:768px){
+
+  .desktop-logo,
+  .desktop-search,
+  .profile-menu{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .mobile-search{
+    display:flex;
+    flex:1;
+  }
+
+  .topbar__inner{
+    padding:10px 14px;
+  }
+}

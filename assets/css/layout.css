@@ -1,0 +1,407 @@
+/* ================= TOPBAR ================= */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.topbar__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.left-group{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* ================= BRAND ================= */
+.brand img{
+  height:54px;
+  display:block;
+}
+
+/* ================= SEARCH ================= */
+.search__icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  margin-right:8px;
+}
+
+.search-svg{
+  width:18px;
+  height:18px;
+  stroke:#222;
+  opacity:.8;
+}
+
+.desktop-search{
+  flex:1;
+  max-width:520px;
+}
+
+.desktop-search input{
+  width:100%;
+  height:46px;
+  border-radius:999px;
+  border:1px solid #ddd;
+  padding:0 18px;
+  font-size:14px;
+  outline:none;
+}
+
+.mobile-search{
+  display:none;
+}
+
+/* ================= ACTION ICONS ================= */
+.actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.iconbtn{
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:8px;
+  border-radius:50%;
+  transition:.2s;
+}
+
+.iconbtn:hover{
+  background:#f7f7f7;
+}
+
+.icon{
+  width:22px;
+  height:22px;
+  stroke:#222;
+  transition:.2s;
+}
+
+.iconbtn:hover .icon{
+  stroke:#f5c542;
+  transform:scale(1.08);
+}
+
+/* ================= AVATAR ================= */
+.profile-menu{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.avatar-btn{
+  border:none;
+  background:none;
+  padding:0;
+  cursor:pointer;
+}
+
+.avatar{
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  object-fit:cover;
+  border:2px solid #eee;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown{
+  position:absolute;
+  top:48px;
+  right:0;
+  width:190px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  border:1px solid rgba(0,0,0,.08);
+  padding:8px;
+  display:none;
+}
+
+.dropdown.show{
+  display:block;
+}
+
+.dropdown-item{
+  display:block;
+  padding:10px 12px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#111;
+  font-weight:600;
+}
+
+.dropdown-item:hover{
+  background:#f5f5f5;
+}
+
+.dropdown-sep{
+  height:1px;
+  background:#eee;
+  margin:6px 0;
+}
+
+.dropdown-item.danger{
+  color:#d11a2a;
+}
+
+/* ================= MOBILE MENU ================= */
+.menu-btn{
+  display:none;
+  width:42px;
+  height:42px;
+  border:none;
+  background:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:270px;
+  height:100%;
+  background:#fff;
+  box-shadow:6px 0 25px rgba(0,0,0,.15);
+  padding:20px;
+  overflow-y:auto;
+  transition:.3s;
+  z-index:1001;
+}
+
+.mobile-menu.show{
+  left:0;
+}
+
+.mobile-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  display:none;
+  z-index:1000;
+}
+
+.mobile-overlay.show{
+  display:block;
+}
+
+.logo-item{
+  margin-bottom:18px;
+}
+
+.menu-title{
+  font-size:13px;
+  font-weight:700;
+  color:#888;
+  margin:14px 0 8px;
+}
+
+.menu-item{
+  display:block;
+  text-decoration:none;
+  color:#111;
+  padding:12px;
+  border-radius:10px;
+  font-weight:500;
+}
+
+.menu-item:hover{
+  background:#f6f6f6;
+}
+
+/* ================= FOOTER ================= */
+.site-footer{
+  background:#dceee0;
+  padding:50px 20px;
+  margin-top:60px;
+  text-align:center;
+}
+
+.footer-divider{
+  width:100%;
+  max-width:900px;
+  height:1px;
+  background:#333;
+  margin:0 auto 28px;
+  opacity:.3;
+}
+
+.footer-links{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px 20px;
+}
+
+.footer-links a{
+  text-decoration:none;
+  color:#222;
+  font-weight:600;
+  font-size:15px;
+}
+
+.footer-copy{
+  margin-top:28px;
+  color:#666;
+  font-size:15px;
+  font-weight:600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px){
+
+  .desktop-logo{
+    display:none;
+  }
+
+  .desktop-search{
+    display:none;
+  }
+
+  .menu-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .profile-menu{
+    display:none;
+  }
+
+  .topbar__inner{
+    padding:10px 14px;
+    gap:10px;
+  }
+
+  .mobile-search{
+    display:flex;
+    align-items:center;
+    flex:1;
+    height:46px;
+    border-radius:999px;
+    background:#f6f6f6;
+    border:1px solid #e4e4e4;
+    padding:0 14px;
+    box-shadow:inset 0 1px 2px rgba(0,0,0,.03);
+  }
+
+  .mobile-search .search__icon{
+    font-size:15px;
+    color:#888;
+    margin-right:8px;
+  }
+
+  .mobile-search input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:14px;
+    height:100%;
+  }
+
+  .actions{
+    gap:2px;
+  }
+
+  .iconbtn{
+    padding:6px;
+  }
+
+  .icon{
+    width:20px;
+    height:20px;
+  }
+
+  .footer-links{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .footer-links a{
+    font-size:14px;
+  }
+
+  .footer-copy{
+    font-size:14px;
+  }
+}
+
+/* ================= DESKTOP MENU DROPDOWN ================= */
+.desktop-menu-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.desktop-menu-btn{
+  height:42px;
+  padding:0 16px;
+  border:none;
+  background:#f5f5f5;
+  border-radius:999px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:14px;
+  transition:.2s;
+}
+
+.desktop-menu-btn:hover{
+  background:#ececec;
+}
+
+.desktop-dropdown{
+  position:absolute;
+  top:52px;
+  left:0;
+  min-width:240px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  border:1px solid rgba(0,0,0,.08);
+  padding:10px;
+  display:none;
+  z-index:999;
+}
+
+.desktop-dropdown.show{
+  display:block;
+}
+
+.desktop-dropdown a{
+  display:block;
+  padding:11px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#111;
+  font-weight:600;
+  font-size:14px;
+}
+
+.desktop-dropdown a:hover{
+  background:#f6f6f6;
+}
+
+.desktop-dropdown hr{
+  border:none;
+  border-top:1px solid #eee;
+  margin:8px 0;
+}

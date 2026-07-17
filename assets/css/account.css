@@ -1,0 +1,121 @@
+:root{
+  --mint:#dff5ea;
+  --mint2:#cfeedd;
+  --green:#0b7a3c;
+  --green2:#0a6b35;
+  --text:#0d1b12;
+  --muted:#6b7a70;
+  --card:#ffffff;
+  --line:#e7efe9;
+  --shadow:0 8px 24px rgba(0,0,0,.08);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--mint)}
+a{color:inherit;text-decoration:none}
+.topbar{
+  position:sticky;top:0;z-index:10;
+  background:linear-gradient(#e9faf1,#e9faf1);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1200px;margin:0 auto;padding:14px 18px;
+  display:flex;gap:14px;align-items:center;
+}
+.logo{display:flex;gap:10px;align-items:center;font-weight:900;color:var(--green)}
+.search{flex:1}
+.search input{
+  width:100%;padding:12px 14px;border:1px solid var(--line);
+  border-radius:999px;background:#fff;outline:none;
+}
+.actions{display:flex;gap:14px;align-items:center}
+.iconbtn{width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer}
+.avatar{
+  width:38px;height:38px;border-radius:999px;border:2px solid #fff;
+  background: #d9f1e3; overflow:hidden; cursor:pointer;
+  display:grid;place-items:center;font-weight:900;color:var(--green);
+  position:relative;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+
+/* dropdown */
+.dropdown{position:relative}
+.menu{
+  position:absolute;right:0;top:46px;
+  width:200px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;box-shadow:var(--shadow);
+  padding:8px;display:none;
+}
+.menu.show{display:block}
+.menu a{
+  display:block;padding:10px 12px;border-radius:10px;color:var(--text);
+}
+.menu a:hover{background:#f3faf6}
+.menu .danger{color:#b00020}
+.menu hr{border:none;border-top:1px solid var(--line);margin:6px 0}
+
+/* page */
+.wrap{max-width:1200px;margin:0 auto;padding:18px}
+.hero{
+  background:#dff6ea;border-radius:22px;padding:26px 22px;
+  display:flex;justify-content:center;align-items:center;flex-direction:column;
+  gap:6px;margin-top:14px;
+}
+.hero h1{margin:0;font-size:40px}
+.hero p{margin:0;color:var(--muted);font-weight:600}
+
+.panel{
+  margin-top:22px;background:var(--card);border:1px solid var(--line);
+  border-radius:22px;box-shadow:var(--shadow);
+  padding:18px;
+  display:grid;grid-template-columns: 260px 1fr;gap:18px;
+}
+.side{
+  border-right:1px solid var(--line);
+  padding-right:14px;
+}
+.navbtn{
+  width:100%;
+  padding:10px 12px;border-radius:999px;border:1px solid var(--line);
+  background:#fff;margin-bottom:10px;cursor:pointer;font-weight:800;
+  display:flex;justify-content:flex-start;gap:10px;align-items:center;
+}
+.navbtn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.content{padding-left:8px}
+.grid{
+  display:grid;grid-template-columns: 220px 1fr;gap:18px;align-items:start;
+}
+.photo{
+  width:220px;height:220px;border-radius:22px;border:1px dashed #cdded4;
+  background:#f6fbf8;display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.editfab{
+  position:absolute;right:12px;bottom:12px;width:44px;height:44px;border-radius:999px;
+  border:none;background:var(--green);color:#fff;font-weight:900;cursor:pointer;
+  display:grid;place-items:center;box-shadow:0 10px 22px rgba(0,0,0,.18);
+}
+.formrow{margin-bottom:12px}
+label{display:block;font-weight:800;margin-bottom:6px}
+input[type="text"], input[type="email"], input[type="tel"]{
+  width:100%;padding:12px 12px;border:1px solid var(--line);
+  border-radius:12px;outline:none;background:#fff;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 16px;border-radius:999px;border:none;cursor:pointer;
+  font-weight:900;
+}
+.btn.green{background:var(--green);color:#fff}
+.btn.green:hover{background:var(--green2)}
+.toast{
+  margin-top:10px;background:#eafff0;border:1px solid #bfe8cf;color:#0a6b35;
+  padding:10px 12px;border-radius:12px;font-weight:800;
+}
+
+@media (max-width: 900px){
+  .panel{grid-template-columns:1fr}
+  .side{border-right:none;border-bottom:1px solid var(--line);padding-right:0;padding-bottom:10px}
+  .grid{grid-template-columns:1fr}
+  .photo{width:100%;height:260px}
+}
