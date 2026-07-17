@@ -609,7 +609,7 @@ src="<?= !empty($user['profile_image'])
 
             <div class="formrow">
               <label>เบอร์โทร</label>
-              <input type="tel" name="phone" value="<?= htmlspecialchars($user['phone']) ?>" required>
+              <input type="tel" name="phone" value="<?= htmlspecialchars($user['phone']??'') ?>" required>
             </div>
 
             <button class="btn green" type="submit">อัปเดตการแก้ไข</button>
