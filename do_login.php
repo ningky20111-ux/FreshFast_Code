@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $email = trim($_POST['email']);
 $password = $_POST['password'];
 
-$conn = new mysqli("localhost", "root", "", "freshfast");
+require_once "db.php";
 $conn->set_charset("utf8mb4");
 
 $stmt = $conn->prepare("SELECT user_id, email, password FROM users WHERE email = ?");

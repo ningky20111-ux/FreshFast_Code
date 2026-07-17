@@ -1,4 +1,6 @@
-<?php // login.php ?>
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="th">
 <head>
@@ -165,9 +167,8 @@
           </div>
         </div>
 
-        <?php
-          session_start();
-          if (!empty($_SESSION['login_error'])) {
+<?php
+if (!empty($_SESSION['login_error'])) {
             echo '<div style="
               background:#ffe5e5;
               color:#b00020;
