@@ -827,7 +827,7 @@ if($email){
   </section>
 
   <?php
-  $conn = new mysqli("localhost", "root", "", "freshfast");
+  require_once "db.php";
   $conn->set_charset("utf8mb4");
 $sql = "
 SELECT 

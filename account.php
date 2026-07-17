@@ -1,7 +1,7 @@
 <?php
 // account.php (UI-first version: ยังไม่ผูก DB)
 session_start();
-$conn = new mysqli("localhost","root","","freshfast");
+require_once "db.php";
 $conn->set_charset("utf8mb4");
 
 if($conn->connect_error){
@@ -569,7 +569,6 @@ src="<?= !empty($user['profile_image'])
     <!-- SIDEBAR -->
     <div class="side">
       <button class="navbtn active">แก้ไขโปรไฟล์</button>
-      <button class="navbtn" type="button" onclick="alert('หน้า ที่อยู่ของฉัน (ยังไม่ทำ)')">ที่อยู่ของฉัน</button>
       <button class="navbtn" type="button" onclick="window.location.href='orders.php'"> คำสั่งซื้อของฉัน
 </button>
       <button class="navbtn" type="button" onclick="alert('หน้า เปลี่ยนรหัส (ยังไม่ทำ)')">เปลี่ยนรหัส</button>

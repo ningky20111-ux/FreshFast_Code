@@ -3,11 +3,8 @@ session_start();
 $email = $_SESSION['user_email'] ?? null;
 
 // รูปโปรไฟล์จากอีเมล (Gravatar)
-$avatar = $email
-  ? "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=identicon&s=96"
-  : null;
-
-$conn = new mysqli("localhost", "root", "", "freshfast");
+$avatar = "assets/images/default-user.png";
+require_once "db.php";
 $conn->set_charset("utf8mb4");
 
 if ($conn->connect_error) {

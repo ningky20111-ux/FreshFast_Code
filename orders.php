@@ -973,11 +973,6 @@ font-size:14px;
       <button class="navbtn" onclick="location.href='account.php'">
       แก้ไขโปรไฟล์
       </button>
-
-      <button class="navbtn">
-      ที่อยู่ของฉัน
-      </button>
-
       <button class="navbtn active">
       คำสั่งซื้อของฉัน
       </button>
