@@ -4,7 +4,7 @@ require_once "db.php";
 $shopType = trim($_POST['shop_type'] ?? '');
 
 if (!isset($conn)) {
-    $conn = new mysqli("localhost", "root", "", "freshfast");
+    require_once "db.php";
     $conn->set_charset("utf8mb4");
 }
 

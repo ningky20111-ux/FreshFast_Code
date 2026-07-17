@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "freshfast");
+require_once "db.php";
 $conn->set_charset("utf8mb4");
 
 $offset = isset($_GET['offset']) ? (int)$_GET['offset'] : 0;

@@ -42,7 +42,7 @@ $email_norm = strtolower($email);
 // ===============================
 // 2) Connect DB
 // ===============================
-$conn = new mysqli("localhost", "root", "", "freshfast");
+require_once "db.php";
 $conn->set_charset("utf8mb4");
 
 if ($conn->connect_error) {

@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if (!isset($conn)) {
-    $conn = new mysqli("localhost", "root", "", "freshfast");
+    require_once "db.php";
     $conn->set_charset("utf8mb4");
 }
 

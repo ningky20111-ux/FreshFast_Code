@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost", "root", "", "freshfast");
+require_once "db.php";
 $conn->set_charset("utf8mb4");
 
 $q = $_GET['q'] ?? '';

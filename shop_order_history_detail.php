@@ -3,7 +3,7 @@ session_start();
 require_once "db.php";
 
 if (!isset($conn)) {
-    $conn = new mysqli("localhost", "root", "", "freshfast");
+    
     $conn->set_charset("utf8mb4");
 }
 
