@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="assets/css/auth.css?v=2">
+
   <title>สมัครสมาชิกสำเร็จ | FreshFast</title>
 
   <style>
