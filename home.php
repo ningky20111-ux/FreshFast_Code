@@ -757,7 +757,7 @@ if($email){
       <?php if ($email): ?>
         <div class="profile-menu">
           <button class="avatar-btn" id="avatarBtn">
-            <img class="avatar" src="<?= htmlspecialchars($avatar) ?>">
+            <img class="avatar" src="<?= htmlspecialchars($avatar ?? 'assets/images/default-avatar.png') ?>">
           </button>
 
           <div class="dropdown" id="profileDropdown">
@@ -910,15 +910,15 @@ LIMIT 10
     <article class="product-card">
 
         <div class="product-img">
-            <img src="<?= htmlspecialchars($row['product_image']) ?>" alt="">
-        </div>
+       <img src="<?= htmlspecialchars($row['product_image'] ?? 'assets/images/no-image.png') ?>" alt="">
+      </div>
 
         <div class="product-name">
-            <?= htmlspecialchars($row['product_name']) ?>
+           <?= htmlspecialchars($row['product_name'] ?? '') ?>
         </div>
 
         <div class="product-shop">
-            <?= htmlspecialchars($row['shop_name']) ?>
+            <?= htmlspecialchars($row['shop_name'] ?? '') ?>
         </div>
 
         <div class="product-bottom">
@@ -997,10 +997,10 @@ LIMIT $limit
           </div>
 
           <div class="shop-info">
-            <div class="shop-name"><?= htmlspecialchars($shop['shop_name']) ?></div>
+            <div class="shop-name"><?= htmlspecialchars($shop['shop_name'] ?? '') ?></div>
             <div class="shop-line"></div>
-            <div class="shop-meta"><?= htmlspecialchars($shop['shop_type']) ?></div>
-            <div class="shop-meta muted">แผง <?= htmlspecialchars($shop['stall_number']) ?></div>
+            <div class="shop-meta"><?= htmlspecialchars($shop['shop_type'] ?? '') ?></div>
+            <div class="shop-meta muted">แผง <?= htmlspecialchars($shop['stall_number'] ?? '') ?></div>
 
       <a class="shop-btn" href="shops.php?id=<?= (int)$shop['shop_id'] ?>">
         ดูสินค้า
