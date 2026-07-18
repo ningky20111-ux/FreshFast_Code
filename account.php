@@ -571,8 +571,13 @@ src="<?= !empty($user['profile_image'])
       <button class="navbtn active">แก้ไขโปรไฟล์</button>
       <button class="navbtn" type="button" onclick="window.location.href='orders.php'"> คำสั่งซื้อของฉัน
 </button>
-      <button class="navbtn" type="button" onclick="alert('หน้า เปลี่ยนรหัส (ยังไม่ทำ)')">เปลี่ยนรหัส</button>
-    </div>
+<button
+    class="navbtn"
+    type="button"
+    onclick="window.location.href='change_password.php'">
+    เปลี่ยนรหัส
+</button>
+ </div>
 
     <!-- CONTENT -->
     <div class="content">
