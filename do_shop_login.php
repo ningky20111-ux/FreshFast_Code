@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 require_once "db.php";
 
@@ -25,41 +29,39 @@ $stmt = $conn->prepare("
     password,
     role, 
     user_status
-
     FROM users
     WHERE email = ?
     LIMIT 1
 ");
-if (($user['user_status'] ?? 'active') != 'active'){
-    header("Location: shop_login.php?error=" . urlencode("บัญชีนี้ถูกระงับหรือปิดใช้งาน"));
-    exit;
-}
 
 $stmt->bind_param("s", $email);
 $stmt->execute();
 
 $user = $stmt->get_result()->fetch_assoc();
 
+
 if (!$user) {
     header("Location: shop_login.php?error=" . urlencode("ไม่พบบัญชีผู้ใช้นี้"));
     exit;
 }
+
 
 if (!password_verify($password, $user['password'])) {
     header("Location: shop_login.php?error=" . urlencode("รหัสผ่านไม่ถูกต้อง"));
     exit;
 }
 
+
 if (($user['role'] ?? '') !== 'shop') {
     header("Location: shop_login.php?error=" . urlencode("บัญชีนี้ไม่ใช่บัญชีร้านค้า"));
     exit;
 }
 
+
 if (($user['user_status'] ?? 'active') !== 'active'){
     header("Location: shop_login.php?error=" . urlencode("บัญชีนี้ถูกระงับหรือปิดใช้งาน"));
     exit;
 }
-
 
 $stmt = $conn->prepare("
     SELECT shop_id
